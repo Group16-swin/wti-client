@@ -24,7 +24,7 @@ onSubmit(e) {
   };
   console.log(newUser);
 
-  axios.post('http://localhost:5000/users/add', newUser)
+  axios.post('https://wti-server.herokuapp.com/users/add', newUser)
   .then(res => console.log(res.data));
 
   this.setState({

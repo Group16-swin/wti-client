@@ -23,7 +23,7 @@ export default class ResponseList extends Component {
 }
 
 componentDidMount() {
-  axios.get('http://localhost:5000/response/')
+  axios.get('https://wti-server.herokuapp.com/response/')
    .then(response => {
      this.setState({ response: response.data });
    })
@@ -33,7 +33,7 @@ componentDidMount() {
 }
 
 deleteResponse(id) {
-  axios.delete('http://localhost:5000/response/'+id)
+  axios.delete('https://wti-server.herokuapp.com/response/'+id)
     .then(res => console.log(res.data));
   this.setState({
     response: this.state.response.filter(el => el._id !== id)

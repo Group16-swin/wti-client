@@ -23,7 +23,7 @@ export default class CreateResponse extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://wti-server.herokuapp.com/users/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -73,7 +73,7 @@ export default class CreateResponse extends Component {
 
     console.log(response);
 
-    axios.post('http://localhost:5000/response/add', response)
+    axios.post('https://wti-server.herokuapp.com/response/add', response)
     .then(res => console.log(res.data));
 
     window.location = '/';

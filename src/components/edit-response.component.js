@@ -23,7 +23,7 @@ export default class EditResponse extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/response/'+this.props.match.params.id)
+    axios.get('https://wti-server.herokuapp.com/response/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           username: response.data.username,
@@ -36,7 +36,7 @@ export default class EditResponse extends Component {
         console.log(error);
       })
 
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://wti-server.herokuapp.com/users/')
       .then(response => {
         this.setState({ users: response.data.map(user => user.username) });
       })
@@ -81,7 +81,7 @@ export default class EditResponse extends Component {
 
     console.log(response);
 
-    axios.post('http://localhost:5000/response/update/'+this.props.match.params.id, response)
+    axios.post('https://wti-server.herokuapp.com/response/update/'+this.props.match.params.id, response)
       .then(res => console.log(res.data));
 
     window.location = '/';
