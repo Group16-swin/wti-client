@@ -5,9 +5,9 @@ import axios from 'axios';
 const Response = props => (
   <tr>
     <td>{props.response._id}</td>
-    <td>{props.response.week}</td>
-    <td>{props.response.month}</td>
-    <td>{props.response.year}</td>
+    <td>{props.response.week.toFixed(3)}</td>
+    <td>{props.response.month.toFixed(3)}</td>
+    <td>{props.response.year.toFixed(3)}</td>
   </tr>
 )
 
@@ -20,7 +20,7 @@ export default class ResponseResults extends Component {
 
   componentDidMount() {
     // console.log(this.props.match.params.id);
-    axios.get('https://wti-server.herokuapp.com/response/wti/rr2')
+    axios.get('https://wti-server.herokuapp.com/response/wti/rr1')
      .then(response => {
        this.setState({ response: response.data });
      })
