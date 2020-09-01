@@ -20,7 +20,7 @@ export default class ResponseResults extends Component {
 
   componentDidMount() {
     // console.log(this.props.match.params.id);
-    axios.get('https://wti-server.herokuapp.com/response/wti/rr1')
+    axios.get('https://wti-server.herokuapp.com/response/wti')
      .then(response => {
        this.setState({ response: response.data });
      })
